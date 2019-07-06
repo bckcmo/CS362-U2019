@@ -52,6 +52,14 @@ enum CARD
    treasure_map
   };
 
+  enum CARD_TYPES {
+    curse_card = 0,
+    victory_card,
+    treasure_card,
+    action_card,
+    any_card
+  };
+
 struct gameState {
   int numPlayers; //number of players
   int supplyCount[treasure_map+1];  //this is the amount of a specific type of card given a specific number.
@@ -85,7 +93,7 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
 		   struct gameState *state);
 /* Responsible for initializing all supplies, and shuffling deck and
    drawing starting hands for all players.  Check that 10 cards selected
-   are in fact (different) kingdom cards, and that numPlayers is valid. 
+   are in fact (different) kingdom cards, and that numPlayers is valid.
 
 Cards not in game should initialize supply position to -1 */
 
@@ -93,9 +101,27 @@ int shuffle(int player, struct gameState *state);
 /* Assumes all cards are now in deck array (or hand/played):  discard is
  empty */
 
+int playBaron(int currentPlayer, int choice1, struct gameState *state);
+/* Play the baron card */
+
+int playMinion(int currentPlayer, int choice1, int choice2, int handPos, struct gameState *state);
+/* Play the minion card */
+
+int playAmbassador(int currentPlayer, int choice1, int choice2, int handPos, struct gameState *state);
+/* Play the ambassador card */
+
+int playTribute(int currentPlayer, int nextPlayer, struct gameState *state);
+/* Play the tribute card */
+
+int playMine(int currentPlayer, int choice1, int choice2, int handPos, struct gameState *state);
+/* Play the mine card */
+
 int playCard(int handPos, int choice1, int choice2, int choice3,
 	     struct gameState *state);
 /* Play card with index handPos from current player's hand */
+
+int isType(int card, int type);
+/* Checks the card's type return true if it the type, false otherwise */
 
 int buyCard(int supplyPos, struct gameState *state);
 /* Buy card with supply index supplyPos */
