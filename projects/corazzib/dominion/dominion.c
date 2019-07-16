@@ -252,7 +252,7 @@ int playBaron(int currentPlayer, int choice1, struct gameState *state)
         }
 
         if(supplyCount(estate, state) > 0) {
-          state->supplyCount[estate]--;//Decrement estates -> is this a bug?
+          state->supplyCount[estate]--;
           if(supplyCount(estate, state) == 0) {
             isGameOver(state);
           }
@@ -324,8 +324,12 @@ int playAmbassador(int currentPlayer, int choice1, int choice2, int handPos, str
     if(i != handPos && i == state->hand[currentPlayer][choice1] && i != choice1) {
       j++;
     }
-  }
 
+    // if(i != handPos && choice1 == state->hand[currentPlayer][i]) {
+    //   j++;
+    // }
+  }
+  printf("cards to discard: %i\n", j);
   if(j < choice2) {
     return -1;
   }
@@ -443,7 +447,6 @@ int playMine(int currentPlayer, int choice1, int choice2, int handPos, struct ga
       break;
     }
   }
-
   return 0;
 }
 
@@ -715,9 +718,9 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
   for (i = 0; i < MAX_PLAYERS; i++)
     {
       if (players[i] > players[j])
-	{
-	  j = i;
-	}
+    	{
+    	  j = i;
+    	}
     }
   highScore = players[j];
 
@@ -726,20 +729,20 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
   for (i = 0; i < MAX_PLAYERS; i++)
     {
       if ( players[i] == highScore && i > currentPlayer )
-	{
-	  players[i]++;
-	}
+    	{
+    	  players[i]++;
+    	}
     }
 
   //find new highest score
   j = 0;
   for (i = 0; i < MAX_PLAYERS; i++)
-    {
-      if ( players[i] > players[j] )
-	{
-	  j = i;
-	}
-    }
+  {
+    if ( players[i] > players[j] )
+  	{
+  	  j = i;
+  	}
+  }
   highScore = players[j];
 
   //set winners in array to 1 and rest to 0
@@ -759,9 +762,11 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
 }
 
 int drawCard(int player, struct gameState *state)
-{	int count;
+{
+  int count;
   int deckCounter;
-  if (state->deckCount[player] <= 0){//Deck is empty
+
+  if (state->deckCount[player] <= 0) {//Deck is empty
 
     //Step 1 Shuffle the discard pile back into a deck
     int i;
@@ -798,9 +803,7 @@ int drawCard(int player, struct gameState *state)
     state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to hand
     state->deckCount[player]--;
     state->handCount[player]++;//Increment hand count
-  }
-
-  else{
+  } else {
     int count = state->handCount[player];//Get current hand count for player
     int deckCounter;
     if (DEBUG){//Debug statements
@@ -1225,35 +1228,35 @@ int discardCard(int handPos, int currentPlayer, struct gameState *state, int tra
 
   //if card is not trashed, added to Played pile
   if (trashFlag < 1)
-    {
-      //add card to played pile
-      state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos];
-      state->playedCardCount++;
-    }
+  {
+    //add card to played pile
+    state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos];
+    state->playedCardCount++;
+  }
 
   //set played card to -1
   state->hand[currentPlayer][handPos] = -1;
 
   //remove card from player's hand
   if ( handPos == (state->handCount[currentPlayer] - 1) ) 	//last card in hand array is played
-    {
-      //reduce number of cards in hand
-      state->handCount[currentPlayer]--;
-    }
+  {
+    //reduce number of cards in hand
+    state->handCount[currentPlayer]--;
+  }
   else if ( state->handCount[currentPlayer] == 1 ) //only one card in hand
-    {
-      //reduce number of cards in hand
-      state->handCount[currentPlayer]--;
-    }
+  {
+    //reduce number of cards in hand
+    state->handCount[currentPlayer]--;
+  }
   else
-    {
-      //replace discarded card with last card in hand
-      state->hand[currentPlayer][handPos] = state->hand[currentPlayer][ (state->handCount[currentPlayer] - 1)];
-      //set last card to -1
-      state->hand[currentPlayer][state->handCount[currentPlayer] - 1] = -1;
-      //reduce number of cards in hand
-      state->handCount[currentPlayer]--;
-    }
+  {
+    //replace discarded card with last card in hand
+    state->hand[currentPlayer][handPos] = state->hand[currentPlayer][ (state->handCount[currentPlayer] - 1)];
+    //set last card to -1
+    state->hand[currentPlayer][state->handCount[currentPlayer] - 1] = -1;
+    //reduce number of cards in hand
+    state->handCount[currentPlayer]--;
+  }
 
   return 0;
 }
