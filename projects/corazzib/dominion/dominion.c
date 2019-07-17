@@ -252,7 +252,7 @@ int playBaron(int currentPlayer, int choice1, struct gameState *state)
         }
 
         if(supplyCount(estate, state) > 0) {
-          state->supplyCount[estate]--;//Decrement estates -> is this a bug?
+          state->supplyCount[estate]--;
           if(supplyCount(estate, state) == 0) {
             isGameOver(state);
           }
@@ -296,9 +296,10 @@ int playMinion(int currentPlayer, int choice1, int choice2, int handPos, struct 
       drawCard(currentPlayer, state);
     }
 
-    //other players discard hand and redraw if hand size > 4
+    // other players discard hand and redraw if hand size > 4
     for(i = 0; i < state->numPlayers; i++) {
       //discard hand
+      printf("state->handCount[i]: %i\n", state->handCount[i]);
       while(state->handCount[i] > 0) {
         discardCard(handPos, i, state, 0);
       }
