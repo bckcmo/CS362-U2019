@@ -103,3 +103,5 @@ REVISION
 /mpc*
 /gmp*
 /isl*
+
+.DS_Store
