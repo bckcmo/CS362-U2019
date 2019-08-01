@@ -5,7 +5,6 @@ testme.o: testme.c
 
 test: testme.o
 	echo "Running Tests:" > results.out
-	echo "randomtestcard1.c:" >> results.out
 	gcc -o testme testme.o $(CFLAGS)
 	./testme >> results.out
 	gcov testme.c -b >> results.out

@@ -19,7 +19,7 @@ char *inputString()
     int range[] = {114, 101, 115, 116, 66};
     char *s = malloc(5 + 1);
     for(int i = 0; i < 5; i++) {
-      s[i] = inputChar(4, range);
+      s[i] = inputChar(5, range);
     }
     return s;
 }
@@ -52,7 +52,8 @@ void testme()
        && s[4] == 't' && s[5] == '\0'
        && state == 9)
     {
-      return;
+      // printf("error ");
+      exit(0);
     }
   }
 }
