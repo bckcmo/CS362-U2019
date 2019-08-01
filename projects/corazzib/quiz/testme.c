@@ -7,11 +7,7 @@
 
 char inputChar(int max, int *range)
 {
-    int randInt = rand() % max;
-    for(int i = 0; i < max; i++) {
-      if(i == randInt) {return range[i];}
-    }
-    return 0;
+    return range[rand() % max];
 }
 
 char *inputString()
