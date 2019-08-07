@@ -16,14 +16,14 @@
  */
 
 import junit.framework.TestCase;
-import java.io.FileNotFoundException; 
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.*;
 import java.util.Iterator;
-import java.util.LinkedHashMap; 
-import java.util.Map; 
-import org.json.simple.JSONArray; 
-import org.json.simple.JSONObject; 
+import java.util.LinkedHashMap;
+import java.util.Map;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
@@ -48,29 +48,29 @@ protected void setUp() {
          testPartsIndex[index] = 0;
       }
    }
-   
-   public void testAssignmentFive() {
-JSONParser jsonParser = new JSONParser();
-try (FileReader reader = new FileReader("urls.json"))
-{
-//Read JSON file
-Object obj = jsonParser.parse(reader);
-JSONObject jsonObject = (JSONObject) obj;
 
-for(Iterator iterator = jsonObject.keySet().iterator(); iterator.hasNext();) {
-String key = (String) iterator.next();
-JSONObject jo = (JSONObject) jsonObject.get(key);
-UrlValidator urlValidator = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
-assertEquals(urlValidator.isValid((String) jo.get("url")), (Boolean.parseBoolean((String) jo.get("valid"))));
-}
-} catch (FileNotFoundException e) {
-e.printStackTrace();
-} catch (IOException e) {
-e.printStackTrace();
-} catch (ParseException e) {
-e.printStackTrace();
-}
-assertTrue(true);
+   public void testAssignmentFive() {
+      JSONParser jsonParser = new JSONParser();
+      try (FileReader reader = new FileReader("urls.json"))
+      {
+         //Read JSON file
+         Object obj = jsonParser.parse(reader);
+         JSONObject jsonObject = (JSONObject) obj;
+
+         for(Iterator iterator = jsonObject.keySet().iterator(); iterator.hasNext();) {
+            String key = (String) iterator.next();
+            JSONObject jo = (JSONObject) jsonObject.get(key);
+            UrlValidator urlValidator = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+            assertEquals(urlValidator.isValid((String) jo.get("url")), (Boolean.parseBoolean((String) jo.get("valid"))));
+         }
+      } catch (FileNotFoundException e) {
+            e.printStackTrace();
+      } catch (IOException e) {
+            e.printStackTrace();
+      } catch (ParseException e) {
+            e.printStackTrace();
+      }
+      assertTrue(true);
    }
 
    public void testIsValid() {
@@ -121,7 +121,7 @@ assertTrue(true);
       int statusPerLine = 60;
       int printed = 0;
 //      int testIndex = 0;
-//      JSONObject jo = new JSONObject(); 
+//      JSONObject jo = new JSONObject();
       if (printIndex)  {
          statusPerLine = 6;
       }
@@ -141,7 +141,7 @@ assertTrue(true);
 //        	 m.put("valid", String.valueOf(expected));
 //        	 jo.put(testIndex, m);
 //         }
-         
+
          boolean result = urlVal.isValid(url);
          assertEquals(url, expected, result);
          if (printStatus) {
@@ -165,7 +165,7 @@ assertTrue(true);
       if (printStatus) {
          System.out.println();
       }
-      
+
 //      System.out.println(jo.toJSONString());
    }
 
