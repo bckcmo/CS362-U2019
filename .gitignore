@@ -103,3 +103,10 @@ REVISION
 /mpc*
 /gmp*
 /isl*
+/.metadata/
+
+.DS_Store
+.classpath
+.project
+bin/
+.metadata
