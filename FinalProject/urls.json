@@ -7,6 +7,10 @@
 		"url": "h3t://255.com:0",
 		"valid": "true"
 	},
+	"12801": {
+		"url": "http://localhost:65536",
+		"valid": "true"
+	},
 	"25600": {
 		"url": "http:/go.cc:999999999999999999/..?action=edit&mode=up",
 		"valid": "false"
