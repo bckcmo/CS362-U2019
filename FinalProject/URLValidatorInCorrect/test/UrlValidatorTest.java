@@ -120,13 +120,12 @@ protected void setUp() {
       assertTrue(urlVal.isValid("http://www.google.com/"));
       int statusPerLine = 60;
       int printed = 0;
-//      int testIndex = 0;
-//      JSONObject jo = new JSONObject();
+
       if (printIndex)  {
          statusPerLine = 6;
       }
       do {
-          StringBuilder testBuffer = new StringBuilder();
+         StringBuilder testBuffer = new StringBuilder();
          boolean expected = true;
          for (int testPartsIndexIndex = 0; testPartsIndexIndex < testPartsIndex.length; ++testPartsIndexIndex) {
             int index = testPartsIndex[testPartsIndexIndex];
@@ -135,12 +134,6 @@ protected void setUp() {
             expected &= part[index].valid;
          }
          String url = testBuffer.toString();
-//         if(testIndex % 200 == 0) {
-//        	 Map m = new LinkedHashMap(2);
-//        	 m.put("url", url);
-//        	 m.put("valid", String.valueOf(expected));
-//        	 jo.put(testIndex, m);
-//         }
 
          boolean result = urlVal.isValid(url);
          assertEquals(url, expected, result);
@@ -160,13 +153,10 @@ protected void setUp() {
                printed = 0;
             }
          }
-//         testIndex++;
       } while (incrementTestPartsIndex(testPartsIndex, testObjects));
       if (printStatus) {
          System.out.println();
       }
-
-//      System.out.println(jo.toJSONString());
    }
 
    public void testValidator202() {
