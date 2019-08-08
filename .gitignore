@@ -103,3 +103,6 @@ REVISION
 /mpc*
 /gmp*
 /isl*
+/.metadata/
+
+.DS_Store
