@@ -16,17 +16,6 @@
  */
 
 import junit.framework.TestCase;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.*;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
 
 /**
  * Performs Validation Test for url validations.
@@ -47,30 +36,6 @@ protected void setUp() {
       for (int index = 0; index < testPartsIndex.length - 1; index++) {
          testPartsIndex[index] = 0;
       }
-   }
-
-   public void testAssignmentFive() {
-      JSONParser jsonParser = new JSONParser();
-      try (FileReader reader = new FileReader("urls.json"))
-      {
-         //Read JSON file
-         Object obj = jsonParser.parse(reader);
-         JSONObject jsonObject = (JSONObject) obj;
-
-         for(Iterator iterator = jsonObject.keySet().iterator(); iterator.hasNext();) {
-            String key = (String) iterator.next();
-            JSONObject jo = (JSONObject) jsonObject.get(key);
-            UrlValidator urlValidator = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
-            assertEquals(urlValidator.isValid((String) jo.get("url")), (Boolean.parseBoolean((String) jo.get("valid"))));
-         }
-      } catch (FileNotFoundException e) {
-            e.printStackTrace();
-      } catch (IOException e) {
-            e.printStackTrace();
-      } catch (ParseException e) {
-            e.printStackTrace();
-      }
-      assertTrue(true);
    }
 
    public void testIsValid() {
@@ -120,12 +85,11 @@ protected void setUp() {
       assertTrue(urlVal.isValid("http://www.google.com/"));
       int statusPerLine = 60;
       int printed = 0;
-
       if (printIndex)  {
          statusPerLine = 6;
       }
       do {
-         StringBuilder testBuffer = new StringBuilder();
+          StringBuilder testBuffer = new StringBuilder();
          boolean expected = true;
          for (int testPartsIndexIndex = 0; testPartsIndexIndex < testPartsIndex.length; ++testPartsIndexIndex) {
             int index = testPartsIndex[testPartsIndexIndex];
@@ -134,7 +98,6 @@ protected void setUp() {
             expected &= part[index].valid;
          }
          String url = testBuffer.toString();
-
          boolean result = urlVal.isValid(url);
          assertEquals(url, expected, result);
          if (printStatus) {
