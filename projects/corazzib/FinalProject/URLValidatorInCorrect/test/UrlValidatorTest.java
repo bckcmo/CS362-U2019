@@ -73,6 +73,33 @@ protected void setUp() {
       assertTrue(true);
    }
 
+    public void testRandomUrl() {
+	//random test
+        Random rand = new Random();
+        
+        for(int i = 0; i < 20000; i++) {
+            UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+
+            StringBuilder testBuffer = new StringBuilder();
+            boolean expected = true;
+            
+            for (int j = 0; j < testPartsIndex.length; ++j) {
+                
+                ResultPair[] part = (ResultPair[]) testUrlPartsOptions[j];
+                
+                //chooses a random index for the test part
+                int index = rand.nextInt(part.length);
+                testBuffer.append(part[index].item);
+                expected &= part[index].valid;
+            }
+            String url = testBuffer.toString();
+        
+            boolean result = urlVal.isValid(url);
+            assertEquals(url, expected, result);
+            
+        }
+   }
+
    public void testIsValid() {
         testIsValid(testUrlParts, UrlValidator.ALLOW_ALL_SCHEMES);
         setUp();
