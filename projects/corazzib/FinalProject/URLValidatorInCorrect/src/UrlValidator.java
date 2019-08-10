@@ -359,7 +359,7 @@ public class UrlValidator implements Serializable {
             return false;
         }
 
-        if (isOff(ALLOW_ALL_SCHEMES) && !allowedSchemes.contains(scheme.toLowerCase(Locale.ENGLISH))) {
+        if (isOff(ALLOW_ALL_SCHEMES) && !allowedSchemes.contains(scheme.toLowerCase(Locale.ENGLISH))) { 
             return false;
         }
 
@@ -445,7 +445,7 @@ public class UrlValidator implements Serializable {
         }
 
         if (!PATH_PATTERN.matcher(path).matches()) {
-            return false;
+            return false; // 
         }
 
         try {
@@ -461,7 +461,7 @@ public class UrlValidator implements Serializable {
         
         int slash2Count = countToken("//", path);
         if (isOff(ALLOW_2_SLASHES) && (slash2Count > 0)) {
-            return false;
+            return true; // BUG - should be false
         }
 
         return true;
@@ -500,13 +500,13 @@ public class UrlValidator implements Serializable {
      * @return the number of tokens.
      */
     protected int countToken(String token, String target) {
-        int tokenIndex = 0;
+        int tokenIndex = 0; 
         int count = 0;
         while (tokenIndex != -1) {
             tokenIndex = target.indexOf(token, tokenIndex);
             if (tokenIndex > -1) {
                 tokenIndex++;
-                count++;
+                count++; 
             }
         }
         return count;
