@@ -1,0 +1,410 @@
+{
+	"0": {
+		"url": "http://www.google.com:80/test1?action=view",
+		"valid": "true"
+	},
+	"12800": {
+		"url": "h3t://255.com:0",
+		"valid": "true"
+	},
+	"12801": {
+		"url": "http://localhost:65536",
+		"valid": "true"
+	},
+	"25600": {
+		"url": "http:/go.cc:999999999999999999/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"38400": {
+		"url": "://go.com:65536/test1?action=view",
+		"valid": "false"
+	},
+	"8200": {
+		"url": "ftp://1.2.3:0/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"21000": {
+		"url": "3ht://.aaa:999999999999999999/test1?action=view",
+		"valid": "false"
+	},
+	"33800": {
+		"url": "http/255.255.255.255:65535",
+		"valid": "false"
+	},
+	"11800": {
+		"url": "h3t://go.au:65636/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"24600": {
+		"url": "http:/.1.2.3.4:65535/test1?action=view",
+		"valid": "false"
+	},
+	"37400": {
+		"url": "http/aaa",
+		"valid": "false"
+	},
+	"7200": {
+		"url": "ftp://256.256.256.256:65636/test1?action=view",
+		"valid": "false"
+	},
+	"20000": {
+		"url": "3ht://go.cc:80",
+		"valid": "false"
+	},
+	"32800": {
+		"url": "http/www.google.com./..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"2600": {
+		"url": "http://1.2.3.4.:-1",
+		"valid": "false"
+	},
+	"15400": {
+		"url": "h3t://.aaa:80/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"28200": {
+		"url": "http:0.0.0.0/test1?action=view",
+		"valid": "false"
+	},
+	"41000": {
+		"url": "://.1.2.3.4:999999999999999999",
+		"valid": "false"
+	},
+	"10800": {
+		"url": "h3t://www.google.com:80/test1?action=view",
+		"valid": "true"
+	},
+	"23600": {
+		"url": "http:/255.com:0",
+		"valid": "false"
+	},
+	"36400": {
+		"url": "http/go.cc:999999999999999999/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"6200": {
+		"url": "ftp://go.com:65a",
+		"valid": "false"
+	},
+	"19000": {
+		"url": "3ht://1.2.3:0/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"31800": {
+		"url": "http:.aaa:999999999999999999/test1?action=view",
+		"valid": "false"
+	},
+	"1600": {
+		"url": "http://255.255.255.255:65a/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"22600": {
+		"url": "http:/go.au:65636/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"35400": {
+		"url": "http/.1.2.3.4:65535/test1?action=view",
+		"valid": "false"
+	},
+	"5200": {
+		"url": "http://:65536/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"18000": {
+		"url": "3ht://256.256.256.256:65636/test1?action=view",
+		"valid": "false"
+	},
+	"30800": {
+		"url": "http:go.cc:80",
+		"valid": "false"
+	},
+	"600": {
+		"url": "http://go.com:65536/test1?action=view",
+		"valid": "false"
+	},
+	"13400": {
+		"url": "h3t://1.2.3.4.:-1",
+		"valid": "false"
+	},
+	"26200": {
+		"url": "http:/.aaa:80/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"39000": {
+		"url": "://0.0.0.0/test1?action=view",
+		"valid": "false"
+	},
+	"8800": {
+		"url": "ftp://go.a:-1/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"21600": {
+		"url": "http:/www.google.com:80/test1?action=view",
+		"valid": "false"
+	},
+	"34400": {
+		"url": "http/255.com:0",
+		"valid": "false"
+	},
+	"4200": {
+		"url": "http://go.1aa:-1/test1?action=view",
+		"valid": "false"
+	},
+	"17000": {
+		"url": "3ht://go.com:65a",
+		"valid": "false"
+	},
+	"29800": {
+		"url": "http:1.2.3:0/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"42600": {
+		"url": "://.aaa:999999999999999999/test1?action=view",
+		"valid": "false"
+	},
+	"12400": {
+		"url": "h3t://255.255.255.255:65a/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"25200": {
+		"url": "http:/go.a1a:0/test1?action=view",
+		"valid": "false"
+	},
+	"38000": {
+		"url": "://www.google.com:65636",
+		"valid": "false"
+	},
+	"7800": {
+		"url": "ftp://1.2.3.4.5:65a/test1?action=view",
+		"valid": "false"
+	},
+	"20600": {
+		"url": "3ht://aaa.:65536",
+		"valid": "false"
+	},
+	"33400": {
+		"url": "http/go.au:65636/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"3200": {
+		"url": "http://.1.2.3.4:999999999999999999",
+		"valid": "false"
+	},
+	"16000": {
+		"url": "h3t://:65536/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"37000": {
+		"url": "http/.aaa:80/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"6800": {
+		"url": "ftp://255.255.255.255:65535",
+		"valid": "true"
+	},
+	"19600": {
+		"url": "3ht://go.a:-1/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"32400": {
+		"url": "http/www.google.com:80/test1?action=view",
+		"valid": "false"
+	},
+	"2200": {
+		"url": "http://1.2.3.4.5:65535/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"15000": {
+		"url": "h3t://go.1aa:-1/test1?action=view",
+		"valid": "false"
+	},
+	"27800": {
+		"url": "http:go.com:65a",
+		"valid": "false"
+	},
+	"40600": {
+		"url": "://1.2.3:0/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"10400": {
+		"url": "ftp://aaa",
+		"valid": "false"
+	},
+	"23200": {
+		"url": "http:/255.255.255.255:65a/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"31400": {
+		"url": "http:aaa.:65536",
+		"valid": "false"
+	},
+	"1200": {
+		"url": "http://0.0.0.0/test1?action=view",
+		"valid": "true"
+	},
+	"14000": {
+		"url": "h3t://.1.2.3.4:999999999999999999",
+		"valid": "false"
+	},
+	"26800": {
+		"url": "http:/:65536/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"39600": {
+		"url": "://256.256.256.256:65636/test1?action=view",
+		"valid": "false"
+	},
+	"9400": {
+		"url": "ftp://go.cc:999999999999999999/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"22200": {
+		"url": "http:/go.com:65536/test1?action=view",
+		"valid": "false"
+	},
+	"200": {
+		"url": "http://www.google.com:65636",
+		"valid": "false"
+	},
+	"13000": {
+		"url": "h3t://1.2.3.4.5:65535/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"25800": {
+		"url": "http:/go.1aa:-1/test1?action=view",
+		"valid": "false"
+	},
+	"38600": {
+		"url": "://go.com:65a",
+		"valid": "false"
+	},
+	"8400": {
+		"url": "ftp://.1.2.3.4:65535/test1?action=view",
+		"valid": "false"
+	},
+	"21200": {
+		"url": "3ht://aaa",
+		"valid": "false"
+	},
+	"34000": {
+		"url": "http/255.255.255.255:65a/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"3800": {
+		"url": "http://go.cc:80",
+		"valid": "true"
+	},
+	"16600": {
+		"url": "3ht://www.google.com./..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"29400": {
+		"url": "http:1.2.3.4.5:65a/test1?action=view",
+		"valid": "false"
+	},
+	"42200": {
+		"url": "://aaa.:65536",
+		"valid": "false"
+	},
+	"12000": {
+		"url": "h3t://0.0.0.0/test1?action=view",
+		"valid": "true"
+	},
+	"24800": {
+		"url": "http:/.1.2.3.4:999999999999999999",
+		"valid": "false"
+	},
+	"37600": {
+		"url": "http/:65536/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"7400": {
+		"url": "ftp://255.com:0",
+		"valid": "true"
+	},
+	"1800": {
+		"url": "http://256.256.256.256:65636/test1?action=view",
+		"valid": "false"
+	},
+	"14600": {
+		"url": "h3t://go.cc:80",
+		"valid": "true"
+	},
+	"39200": {
+		"url": "://255.255.255.255:65535",
+		"valid": "false"
+	},
+	"18800": {
+		"url": "3ht://1.2.3.4.:-1",
+		"valid": "false"
+	},
+	"31600": {
+		"url": "http:.aaa:80/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"1400": {
+		"url": "http://255.255.255.255:65535",
+		"valid": "true"
+	},
+	"4000": {
+		"url": "http://go.cc:999999999999999999/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"16800": {
+		"url": "3ht://go.com:65536/test1?action=view",
+		"valid": "false"
+	},
+	"29600": {
+		"url": "http:1.2.3.4.:-1",
+		"valid": "false"
+	},
+	"42400": {
+		"url": "://.aaa:80/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"12200": {
+		"url": "h3t://255.255.255.255:65535",
+		"valid": "true"
+	},
+	"6600": {
+		"url": "ftp://0.0.0.0/test1?action=view",
+		"valid": "true"
+	},
+	"19400": {
+		"url": "3ht://.1.2.3.4:999999999999999999",
+		"valid": "false"
+	},
+	"32200": {
+		"url": "http::65536/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"2000": {
+		"url": "http://255.com:0",
+		"valid": "true"
+	},
+	"1000": {
+		"url": "http://go.au:65636/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"13800": {
+		"url": "h3t://.1.2.3.4:65535/test1?action=view",
+		"valid": "false"
+	},
+	"26600": {
+		"url": "http:/aaa",
+		"valid": "false"
+	},
+	"39400": {
+		"url": "://255.255.255.255:65a/..?action=edit&mode=up",
+		"valid": "false"
+	},
+	"9200": {
+		"url": "ftp://go.cc:80",
+		"valid": "true"
+	},
+	"9201": {
+		"url": "https://:pass@www.facebook.com",
+		"valid": "false"
+	}
+}
