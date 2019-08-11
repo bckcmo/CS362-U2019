@@ -143,7 +143,7 @@ public class UrlValidator implements Serializable {
     // unreserved    = ALPHA / DIGIT / "-" / "." / "_" / "~"
     // sub-delims    = "!" / "$" / "&" / "'" / "(" / ")" / "*" / "+" / "," / ";" / "="
     // We assume that password has the same valid chars as user info
-    private static final String USERINFO_CHARS_REGEX = /*"[a-zA-Z0-9%-._~!$&'()*+,;=]"*/ "[a-zA-Z0-9%-._~!$&'()*+,;:=]"; // BUG
+    private static final String USERINFO_CHARS_REGEX = "[a-zA-Z0-9%-._~!$&'()*+,;=]";
     // since neither ':' nor '@' are allowed chars, we don't need to use non-greedy matching
     private static final String USERINFO_FIELD_REGEX =
             USERINFO_CHARS_REGEX + "+" + // At least one character for the name
@@ -417,7 +417,7 @@ public class UrlValidator implements Serializable {
             if (port != null && port.length() > 0) {
                 try {
                     int iPort = Integer.parseInt(port);
-                    if (iPort < 0 || iPort /* > */ >= MAX_UNSIGNED_16_BIT_INT) { // BUG
+                    if (iPort < 0 || iPort > MAX_UNSIGNED_16_BIT_INT) {
                         return false;
                     }
                 } catch (NumberFormatException nfe) {
